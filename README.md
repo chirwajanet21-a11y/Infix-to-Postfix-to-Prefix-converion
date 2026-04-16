@@ -22,7 +22,8 @@ into two computer-friendly formats:
  `InfixConverter.java` (The main Java program )
 `PSEUDO CODES FOR THE INFIX` (Step by step logic breakdown )
  `workflowforinfixtopostfix.jpg` 
- 'workflowforinfixtoprefix.jpg'(Workflow diagram )
+ `workflowforinfixtoprefix.jpg
+ `(Workflow diagram )
 
 
 ## How It Works
