@@ -1,38 +1,87 @@
- Infix to Postfix & Prefix Converter
+ # Infix to Postfix & Prefix Converter
 
-​This Java project provides a robust implementation for converting mathematical Infix expressions into Postfix (Reverse Polish Notation) and Prefix (Polish Notation) using the Shunting-Yard algorithm.  
-    Features
-​Converts complex infix expressions (e.g., A+B*(C-D)) to Postfix and Prefix.  
-​Supports operator precedence (e.g., ^ > * > +).  
-​Handles parentheses for changing evaluation order.  
-​Uses a stack-based approach for efficient conversion.  
+Ever wondered how a calculator actually reads your math? 
+This Java program does exactly that  it takes a normal 
+math expression like `A+B*C` and converts it into formats 
+that computers can easily evaluate.
 
-​ Logic & Workflow
-​1. Infix to Postfix
-​The program scans the expression from left to right. It uses a Stack to hold operators and ensures they are appended to the result based on their mathematical priority.  
-​2. Infix to Prefix
-​The conversion follows a four-step process:  
-​Reverse the infix string.
-​Swap the brackets ( ( becomes ) and vice versa).
-​Perform Postfix conversion on the modified string.
-​Reverse the final result to get the Prefix expression.
 
-How to Run
-1.Ensure Java is installed:
-java -version
-2.Compile the program:
-javac InfixConverter.java
-3.Run the application:
-java InfixConverter
 
-Code Structure
+## What This Program Does
+
+It converts an **infix expression** (the way humans write math)
+into two computer-friendly formats:
+
+- **Postfix** → operators come *after* operands `A B C * +`
+- **Prefix** → operators come *before* operands `+ A * B C`
+
+
+
+## Files in This Project
+
+ `InfixConverter.java` (The main Java program )
+`PSEUDO CODES FOR THE INFIX` (Step by step logic breakdown )
+ `IMG-20260416-WA0339.jpg` (Workflow diagram )
+
+
+## How It Works
+
+### Converting to Postfix
+The program reads your expression from left to right.
+Every time it sees an operator like `+` or `*`, it checks
+if there's a higher priority operator waiting — if yes,
+that one goes first. It uses a **stack** to keep track
+of everything.
+
+### Converting to Prefix
+This one's clever:
+1. Flip the entire expression backwards
+2. Swap every `(` with `)` and vice versa
+3. Run the same Postfix conversion
+4. Flip the result again that's your Prefix!
+
+#Code Structure
 ​getPrecedence(char ch): Assigns weight to operators.  
 ​infixToPostfix(String exp): The core Shunting-Yard logic.  
-​infixToPrefix(String exp): String manipulation logic for prefix output. 
+​infixToPrefix(String exp): String manipulation logic for prefix output.  
 
-Example Output
-Infix:   A+B*(C-D)
-Postfix: ABCD-*+
-Prefix:  +A*B-CD
+
+## Operator Priority
+
+ `^` | Highest (3) 
+`*` `/` | Medium (2) 
+ `+` `-` Lowest (1) 
+
+So `A+B*C` means multiply first, then add — just like
+normal math rules.
+
+
+## How to Run It
+
+Make sure Java is installed on your computer, then:
+
+
+# Step 1 — Compile
+javac InfixConverter.java
+
+# Step 2 — Run
+java InfixConverter
+Example Results
+Expression
+Postfix
+Prefix
+A+B*C
+A B C * +
++ A * B C
+(A+B)*(C-D)
+A B + C D - *
+* + A B - C D
+A^B^C
+A B C ^ ^
+^ A ^ B C
+The Algorithm Behind It
+This program uses the Shunting-Yard Algorithm, invented
+by the famous computer scientist Edsger Dijkstra. It's the
+same logic used inside real calculators and compilers.
 
 
