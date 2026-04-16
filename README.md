@@ -20,7 +20,7 @@ into two computer-friendly formats:
 ## Files in This Project
 
  `InfixConverter.java` (The main Java program )
-`PSEUDO CODES FOR THE INFIX` (Step by step logic breakdown )
+`PSEUDO CODES FOR THE INFIX.pdf` (Step by step logic breakdown )
  `workflowforinfixtopostfix.jpg` 
  `workflowforinfixtoprefix.jpg
  `(Workflow diagram )
